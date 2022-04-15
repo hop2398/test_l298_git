@@ -1,0 +1,1099 @@
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"stm32f10x_gpio.c"
+  12              		.text
+  13              		.section	.text.GPIO_DeInit,"ax",%progbits
+  14              		.align	1
+  15              		.global	GPIO_DeInit
+  16              		.arch armv7-m
+  17              		.syntax unified
+  18              		.thumb
+  19              		.thumb_func
+  20              		.fpu softvfp
+  22              	GPIO_DeInit:
+  23              		@ args = 0, pretend = 0, frame = 8
+  24              		@ frame_needed = 1, uses_anonymous_args = 0
+  25 0000 80B5     		push	{r7, lr}
+  26 0002 82B0     		sub	sp, sp, #8
+  27 0004 00AF     		add	r7, sp, #0
+  28 0006 7860     		str	r0, [r7, #4]
+  29 0008 7B68     		ldr	r3, [r7, #4]
+  30 000a 2F4A     		ldr	r2, .L10
+  31 000c 9342     		cmp	r3, r2
+  32 000e 08D1     		bne	.L2
+  33 0010 0121     		movs	r1, #1
+  34 0012 0420     		movs	r0, #4
+  35 0014 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  36 0018 0021     		movs	r1, #0
+  37 001a 0420     		movs	r0, #4
+  38 001c FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  39 0020 4EE0     		b	.L9
+  40              	.L2:
+  41 0022 7B68     		ldr	r3, [r7, #4]
+  42 0024 294A     		ldr	r2, .L10+4
+  43 0026 9342     		cmp	r3, r2
+  44 0028 08D1     		bne	.L4
+  45 002a 0121     		movs	r1, #1
+  46 002c 0820     		movs	r0, #8
+  47 002e FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  48 0032 0021     		movs	r1, #0
+  49 0034 0820     		movs	r0, #8
+  50 0036 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  51 003a 41E0     		b	.L9
+  52              	.L4:
+  53 003c 7B68     		ldr	r3, [r7, #4]
+  54 003e 244A     		ldr	r2, .L10+8
+  55 0040 9342     		cmp	r3, r2
+  56 0042 08D1     		bne	.L5
+  57 0044 0121     		movs	r1, #1
+  58 0046 1020     		movs	r0, #16
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 2
+
+
+  59 0048 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  60 004c 0021     		movs	r1, #0
+  61 004e 1020     		movs	r0, #16
+  62 0050 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  63 0054 34E0     		b	.L9
+  64              	.L5:
+  65 0056 7B68     		ldr	r3, [r7, #4]
+  66 0058 1E4A     		ldr	r2, .L10+12
+  67 005a 9342     		cmp	r3, r2
+  68 005c 08D1     		bne	.L6
+  69 005e 0121     		movs	r1, #1
+  70 0060 2020     		movs	r0, #32
+  71 0062 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  72 0066 0021     		movs	r1, #0
+  73 0068 2020     		movs	r0, #32
+  74 006a FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  75 006e 27E0     		b	.L9
+  76              	.L6:
+  77 0070 7B68     		ldr	r3, [r7, #4]
+  78 0072 194A     		ldr	r2, .L10+16
+  79 0074 9342     		cmp	r3, r2
+  80 0076 08D1     		bne	.L7
+  81 0078 0121     		movs	r1, #1
+  82 007a 4020     		movs	r0, #64
+  83 007c FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  84 0080 0021     		movs	r1, #0
+  85 0082 4020     		movs	r0, #64
+  86 0084 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  87 0088 1AE0     		b	.L9
+  88              	.L7:
+  89 008a 7B68     		ldr	r3, [r7, #4]
+  90 008c 134A     		ldr	r2, .L10+20
+  91 008e 9342     		cmp	r3, r2
+  92 0090 08D1     		bne	.L8
+  93 0092 0121     		movs	r1, #1
+  94 0094 8020     		movs	r0, #128
+  95 0096 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  96 009a 0021     		movs	r1, #0
+  97 009c 8020     		movs	r0, #128
+  98 009e FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+  99 00a2 0DE0     		b	.L9
+ 100              	.L8:
+ 101 00a4 7B68     		ldr	r3, [r7, #4]
+ 102 00a6 0E4A     		ldr	r2, .L10+24
+ 103 00a8 9342     		cmp	r3, r2
+ 104 00aa 09D1     		bne	.L9
+ 105 00ac 0121     		movs	r1, #1
+ 106 00ae 4FF48070 		mov	r0, #256
+ 107 00b2 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+ 108 00b6 0021     		movs	r1, #0
+ 109 00b8 4FF48070 		mov	r0, #256
+ 110 00bc FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+ 111              	.L9:
+ 112 00c0 00BF     		nop
+ 113 00c2 0837     		adds	r7, r7, #8
+ 114 00c4 BD46     		mov	sp, r7
+ 115              		@ sp needed
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 3
+
+
+ 116 00c6 80BD     		pop	{r7, pc}
+ 117              	.L11:
+ 118              		.align	2
+ 119              	.L10:
+ 120 00c8 00080140 		.word	1073809408
+ 121 00cc 000C0140 		.word	1073810432
+ 122 00d0 00100140 		.word	1073811456
+ 123 00d4 00140140 		.word	1073812480
+ 124 00d8 00180140 		.word	1073813504
+ 125 00dc 001C0140 		.word	1073814528
+ 126 00e0 00200140 		.word	1073815552
+ 128              		.section	.text.GPIO_AFIODeInit,"ax",%progbits
+ 129              		.align	1
+ 130              		.global	GPIO_AFIODeInit
+ 131              		.syntax unified
+ 132              		.thumb
+ 133              		.thumb_func
+ 134              		.fpu softvfp
+ 136              	GPIO_AFIODeInit:
+ 137              		@ args = 0, pretend = 0, frame = 0
+ 138              		@ frame_needed = 1, uses_anonymous_args = 0
+ 139 0000 80B5     		push	{r7, lr}
+ 140 0002 00AF     		add	r7, sp, #0
+ 141 0004 0121     		movs	r1, #1
+ 142 0006 0120     		movs	r0, #1
+ 143 0008 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+ 144 000c 0021     		movs	r1, #0
+ 145 000e 0120     		movs	r0, #1
+ 146 0010 FFF7FEFF 		bl	RCC_APB2PeriphResetCmd
+ 147 0014 00BF     		nop
+ 148 0016 80BD     		pop	{r7, pc}
+ 150              		.section	.text.GPIO_Init,"ax",%progbits
+ 151              		.align	1
+ 152              		.global	GPIO_Init
+ 153              		.syntax unified
+ 154              		.thumb
+ 155              		.thumb_func
+ 156              		.fpu softvfp
+ 158              	GPIO_Init:
+ 159              		@ args = 0, pretend = 0, frame = 32
+ 160              		@ frame_needed = 1, uses_anonymous_args = 0
+ 161              		@ link register save eliminated.
+ 162 0000 80B4     		push	{r7}
+ 163 0002 89B0     		sub	sp, sp, #36
+ 164 0004 00AF     		add	r7, sp, #0
+ 165 0006 7860     		str	r0, [r7, #4]
+ 166 0008 3960     		str	r1, [r7]
+ 167 000a 0023     		movs	r3, #0
+ 168 000c FB61     		str	r3, [r7, #28]
+ 169 000e 0023     		movs	r3, #0
+ 170 0010 3B61     		str	r3, [r7, #16]
+ 171 0012 0023     		movs	r3, #0
+ 172 0014 BB61     		str	r3, [r7, #24]
+ 173 0016 0023     		movs	r3, #0
+ 174 0018 FB60     		str	r3, [r7, #12]
+ 175 001a 0023     		movs	r3, #0
+ 176 001c 7B61     		str	r3, [r7, #20]
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 4
+
+
+ 177 001e 0023     		movs	r3, #0
+ 178 0020 BB60     		str	r3, [r7, #8]
+ 179 0022 3B68     		ldr	r3, [r7]
+ 180 0024 DB78     		ldrb	r3, [r3, #3]	@ zero_extendqisi2
+ 181 0026 03F00F03 		and	r3, r3, #15
+ 182 002a FB61     		str	r3, [r7, #28]
+ 183 002c 3B68     		ldr	r3, [r7]
+ 184 002e DB78     		ldrb	r3, [r3, #3]	@ zero_extendqisi2
+ 185 0030 03F01003 		and	r3, r3, #16
+ 186 0034 002B     		cmp	r3, #0
+ 187 0036 05D0     		beq	.L14
+ 188 0038 3B68     		ldr	r3, [r7]
+ 189 003a 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 190 003c 1A46     		mov	r2, r3
+ 191 003e FB69     		ldr	r3, [r7, #28]
+ 192 0040 1343     		orrs	r3, r3, r2
+ 193 0042 FB61     		str	r3, [r7, #28]
+ 194              	.L14:
+ 195 0044 3B68     		ldr	r3, [r7]
+ 196 0046 1B88     		ldrh	r3, [r3]
+ 197 0048 DBB2     		uxtb	r3, r3
+ 198 004a 002B     		cmp	r3, #0
+ 199 004c 44D0     		beq	.L15
+ 200 004e 7B68     		ldr	r3, [r7, #4]
+ 201 0050 1B68     		ldr	r3, [r3]
+ 202 0052 7B61     		str	r3, [r7, #20]
+ 203 0054 0023     		movs	r3, #0
+ 204 0056 BB61     		str	r3, [r7, #24]
+ 205 0058 38E0     		b	.L16
+ 206              	.L19:
+ 207 005a 0122     		movs	r2, #1
+ 208 005c BB69     		ldr	r3, [r7, #24]
+ 209 005e 02FA03F3 		lsl	r3, r2, r3
+ 210 0062 FB60     		str	r3, [r7, #12]
+ 211 0064 3B68     		ldr	r3, [r7]
+ 212 0066 1B88     		ldrh	r3, [r3]
+ 213 0068 1A46     		mov	r2, r3
+ 214 006a FB68     		ldr	r3, [r7, #12]
+ 215 006c 1340     		ands	r3, r3, r2
+ 216 006e 3B61     		str	r3, [r7, #16]
+ 217 0070 3A69     		ldr	r2, [r7, #16]
+ 218 0072 FB68     		ldr	r3, [r7, #12]
+ 219 0074 9A42     		cmp	r2, r3
+ 220 0076 26D1     		bne	.L17
+ 221 0078 BB69     		ldr	r3, [r7, #24]
+ 222 007a 9B00     		lsls	r3, r3, #2
+ 223 007c FB60     		str	r3, [r7, #12]
+ 224 007e 0F22     		movs	r2, #15
+ 225 0080 FB68     		ldr	r3, [r7, #12]
+ 226 0082 02FA03F3 		lsl	r3, r2, r3
+ 227 0086 BB60     		str	r3, [r7, #8]
+ 228 0088 BB68     		ldr	r3, [r7, #8]
+ 229 008a DB43     		mvns	r3, r3
+ 230 008c 7A69     		ldr	r2, [r7, #20]
+ 231 008e 1340     		ands	r3, r3, r2
+ 232 0090 7B61     		str	r3, [r7, #20]
+ 233 0092 FA69     		ldr	r2, [r7, #28]
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 5
+
+
+ 234 0094 FB68     		ldr	r3, [r7, #12]
+ 235 0096 02FA03F3 		lsl	r3, r2, r3
+ 236 009a 7A69     		ldr	r2, [r7, #20]
+ 237 009c 1343     		orrs	r3, r3, r2
+ 238 009e 7B61     		str	r3, [r7, #20]
+ 239 00a0 3B68     		ldr	r3, [r7]
+ 240 00a2 DB78     		ldrb	r3, [r3, #3]	@ zero_extendqisi2
+ 241 00a4 282B     		cmp	r3, #40
+ 242 00a6 05D1     		bne	.L18
+ 243 00a8 0122     		movs	r2, #1
+ 244 00aa BB69     		ldr	r3, [r7, #24]
+ 245 00ac 9A40     		lsls	r2, r2, r3
+ 246 00ae 7B68     		ldr	r3, [r7, #4]
+ 247 00b0 5A61     		str	r2, [r3, #20]
+ 248 00b2 08E0     		b	.L17
+ 249              	.L18:
+ 250 00b4 3B68     		ldr	r3, [r7]
+ 251 00b6 DB78     		ldrb	r3, [r3, #3]	@ zero_extendqisi2
+ 252 00b8 482B     		cmp	r3, #72
+ 253 00ba 04D1     		bne	.L17
+ 254 00bc 0122     		movs	r2, #1
+ 255 00be BB69     		ldr	r3, [r7, #24]
+ 256 00c0 9A40     		lsls	r2, r2, r3
+ 257 00c2 7B68     		ldr	r3, [r7, #4]
+ 258 00c4 1A61     		str	r2, [r3, #16]
+ 259              	.L17:
+ 260 00c6 BB69     		ldr	r3, [r7, #24]
+ 261 00c8 0133     		adds	r3, r3, #1
+ 262 00ca BB61     		str	r3, [r7, #24]
+ 263              	.L16:
+ 264 00cc BB69     		ldr	r3, [r7, #24]
+ 265 00ce 072B     		cmp	r3, #7
+ 266 00d0 C3D9     		bls	.L19
+ 267 00d2 7B68     		ldr	r3, [r7, #4]
+ 268 00d4 7A69     		ldr	r2, [r7, #20]
+ 269 00d6 1A60     		str	r2, [r3]
+ 270              	.L15:
+ 271 00d8 3B68     		ldr	r3, [r7]
+ 272 00da 1B88     		ldrh	r3, [r3]
+ 273 00dc FF2B     		cmp	r3, #255
+ 274 00de 46D9     		bls	.L25
+ 275 00e0 7B68     		ldr	r3, [r7, #4]
+ 276 00e2 5B68     		ldr	r3, [r3, #4]
+ 277 00e4 7B61     		str	r3, [r7, #20]
+ 278 00e6 0023     		movs	r3, #0
+ 279 00e8 BB61     		str	r3, [r7, #24]
+ 280 00ea 3AE0     		b	.L21
+ 281              	.L24:
+ 282 00ec BB69     		ldr	r3, [r7, #24]
+ 283 00ee 0833     		adds	r3, r3, #8
+ 284 00f0 0122     		movs	r2, #1
+ 285 00f2 02FA03F3 		lsl	r3, r2, r3
+ 286 00f6 FB60     		str	r3, [r7, #12]
+ 287 00f8 3B68     		ldr	r3, [r7]
+ 288 00fa 1B88     		ldrh	r3, [r3]
+ 289 00fc 1A46     		mov	r2, r3
+ 290 00fe FB68     		ldr	r3, [r7, #12]
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 6
+
+
+ 291 0100 1340     		ands	r3, r3, r2
+ 292 0102 3B61     		str	r3, [r7, #16]
+ 293 0104 3A69     		ldr	r2, [r7, #16]
+ 294 0106 FB68     		ldr	r3, [r7, #12]
+ 295 0108 9A42     		cmp	r2, r3
+ 296 010a 27D1     		bne	.L22
+ 297 010c BB69     		ldr	r3, [r7, #24]
+ 298 010e 9B00     		lsls	r3, r3, #2
+ 299 0110 FB60     		str	r3, [r7, #12]
+ 300 0112 0F22     		movs	r2, #15
+ 301 0114 FB68     		ldr	r3, [r7, #12]
+ 302 0116 02FA03F3 		lsl	r3, r2, r3
+ 303 011a BB60     		str	r3, [r7, #8]
+ 304 011c BB68     		ldr	r3, [r7, #8]
+ 305 011e DB43     		mvns	r3, r3
+ 306 0120 7A69     		ldr	r2, [r7, #20]
+ 307 0122 1340     		ands	r3, r3, r2
+ 308 0124 7B61     		str	r3, [r7, #20]
+ 309 0126 FA69     		ldr	r2, [r7, #28]
+ 310 0128 FB68     		ldr	r3, [r7, #12]
+ 311 012a 02FA03F3 		lsl	r3, r2, r3
+ 312 012e 7A69     		ldr	r2, [r7, #20]
+ 313 0130 1343     		orrs	r3, r3, r2
+ 314 0132 7B61     		str	r3, [r7, #20]
+ 315 0134 3B68     		ldr	r3, [r7]
+ 316 0136 DB78     		ldrb	r3, [r3, #3]	@ zero_extendqisi2
+ 317 0138 282B     		cmp	r3, #40
+ 318 013a 05D1     		bne	.L23
+ 319 013c BB69     		ldr	r3, [r7, #24]
+ 320 013e 0833     		adds	r3, r3, #8
+ 321 0140 0122     		movs	r2, #1
+ 322 0142 9A40     		lsls	r2, r2, r3
+ 323 0144 7B68     		ldr	r3, [r7, #4]
+ 324 0146 5A61     		str	r2, [r3, #20]
+ 325              	.L23:
+ 326 0148 3B68     		ldr	r3, [r7]
+ 327 014a DB78     		ldrb	r3, [r3, #3]	@ zero_extendqisi2
+ 328 014c 482B     		cmp	r3, #72
+ 329 014e 05D1     		bne	.L22
+ 330 0150 BB69     		ldr	r3, [r7, #24]
+ 331 0152 0833     		adds	r3, r3, #8
+ 332 0154 0122     		movs	r2, #1
+ 333 0156 9A40     		lsls	r2, r2, r3
+ 334 0158 7B68     		ldr	r3, [r7, #4]
+ 335 015a 1A61     		str	r2, [r3, #16]
+ 336              	.L22:
+ 337 015c BB69     		ldr	r3, [r7, #24]
+ 338 015e 0133     		adds	r3, r3, #1
+ 339 0160 BB61     		str	r3, [r7, #24]
+ 340              	.L21:
+ 341 0162 BB69     		ldr	r3, [r7, #24]
+ 342 0164 072B     		cmp	r3, #7
+ 343 0166 C1D9     		bls	.L24
+ 344 0168 7B68     		ldr	r3, [r7, #4]
+ 345 016a 7A69     		ldr	r2, [r7, #20]
+ 346 016c 5A60     		str	r2, [r3, #4]
+ 347              	.L25:
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 7
+
+
+ 348 016e 00BF     		nop
+ 349 0170 2437     		adds	r7, r7, #36
+ 350 0172 BD46     		mov	sp, r7
+ 351              		@ sp needed
+ 352 0174 80BC     		pop	{r7}
+ 353 0176 7047     		bx	lr
+ 355              		.section	.text.GPIO_StructInit,"ax",%progbits
+ 356              		.align	1
+ 357              		.global	GPIO_StructInit
+ 358              		.syntax unified
+ 359              		.thumb
+ 360              		.thumb_func
+ 361              		.fpu softvfp
+ 363              	GPIO_StructInit:
+ 364              		@ args = 0, pretend = 0, frame = 8
+ 365              		@ frame_needed = 1, uses_anonymous_args = 0
+ 366              		@ link register save eliminated.
+ 367 0000 80B4     		push	{r7}
+ 368 0002 83B0     		sub	sp, sp, #12
+ 369 0004 00AF     		add	r7, sp, #0
+ 370 0006 7860     		str	r0, [r7, #4]
+ 371 0008 7B68     		ldr	r3, [r7, #4]
+ 372 000a 4FF6FF72 		movw	r2, #65535
+ 373 000e 1A80     		strh	r2, [r3]	@ movhi
+ 374 0010 7B68     		ldr	r3, [r7, #4]
+ 375 0012 0222     		movs	r2, #2
+ 376 0014 9A70     		strb	r2, [r3, #2]
+ 377 0016 7B68     		ldr	r3, [r7, #4]
+ 378 0018 0422     		movs	r2, #4
+ 379 001a DA70     		strb	r2, [r3, #3]
+ 380 001c 00BF     		nop
+ 381 001e 0C37     		adds	r7, r7, #12
+ 382 0020 BD46     		mov	sp, r7
+ 383              		@ sp needed
+ 384 0022 80BC     		pop	{r7}
+ 385 0024 7047     		bx	lr
+ 387              		.section	.text.GPIO_ReadInputDataBit,"ax",%progbits
+ 388              		.align	1
+ 389              		.global	GPIO_ReadInputDataBit
+ 390              		.syntax unified
+ 391              		.thumb
+ 392              		.thumb_func
+ 393              		.fpu softvfp
+ 395              	GPIO_ReadInputDataBit:
+ 396              		@ args = 0, pretend = 0, frame = 16
+ 397              		@ frame_needed = 1, uses_anonymous_args = 0
+ 398              		@ link register save eliminated.
+ 399 0000 80B4     		push	{r7}
+ 400 0002 85B0     		sub	sp, sp, #20
+ 401 0004 00AF     		add	r7, sp, #0
+ 402 0006 7860     		str	r0, [r7, #4]
+ 403 0008 0B46     		mov	r3, r1
+ 404 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 405 000c 0023     		movs	r3, #0
+ 406 000e FB73     		strb	r3, [r7, #15]
+ 407 0010 7B68     		ldr	r3, [r7, #4]
+ 408 0012 9A68     		ldr	r2, [r3, #8]
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 8
+
+
+ 409 0014 7B88     		ldrh	r3, [r7, #2]
+ 410 0016 1340     		ands	r3, r3, r2
+ 411 0018 002B     		cmp	r3, #0
+ 412 001a 02D0     		beq	.L28
+ 413 001c 0123     		movs	r3, #1
+ 414 001e FB73     		strb	r3, [r7, #15]
+ 415 0020 01E0     		b	.L29
+ 416              	.L28:
+ 417 0022 0023     		movs	r3, #0
+ 418 0024 FB73     		strb	r3, [r7, #15]
+ 419              	.L29:
+ 420 0026 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 421 0028 1846     		mov	r0, r3
+ 422 002a 1437     		adds	r7, r7, #20
+ 423 002c BD46     		mov	sp, r7
+ 424              		@ sp needed
+ 425 002e 80BC     		pop	{r7}
+ 426 0030 7047     		bx	lr
+ 428              		.section	.text.GPIO_ReadInputData,"ax",%progbits
+ 429              		.align	1
+ 430              		.global	GPIO_ReadInputData
+ 431              		.syntax unified
+ 432              		.thumb
+ 433              		.thumb_func
+ 434              		.fpu softvfp
+ 436              	GPIO_ReadInputData:
+ 437              		@ args = 0, pretend = 0, frame = 8
+ 438              		@ frame_needed = 1, uses_anonymous_args = 0
+ 439              		@ link register save eliminated.
+ 440 0000 80B4     		push	{r7}
+ 441 0002 83B0     		sub	sp, sp, #12
+ 442 0004 00AF     		add	r7, sp, #0
+ 443 0006 7860     		str	r0, [r7, #4]
+ 444 0008 7B68     		ldr	r3, [r7, #4]
+ 445 000a 9B68     		ldr	r3, [r3, #8]
+ 446 000c 9BB2     		uxth	r3, r3
+ 447 000e 1846     		mov	r0, r3
+ 448 0010 0C37     		adds	r7, r7, #12
+ 449 0012 BD46     		mov	sp, r7
+ 450              		@ sp needed
+ 451 0014 80BC     		pop	{r7}
+ 452 0016 7047     		bx	lr
+ 454              		.section	.text.GPIO_ReadOutputDataBit,"ax",%progbits
+ 455              		.align	1
+ 456              		.global	GPIO_ReadOutputDataBit
+ 457              		.syntax unified
+ 458              		.thumb
+ 459              		.thumb_func
+ 460              		.fpu softvfp
+ 462              	GPIO_ReadOutputDataBit:
+ 463              		@ args = 0, pretend = 0, frame = 16
+ 464              		@ frame_needed = 1, uses_anonymous_args = 0
+ 465              		@ link register save eliminated.
+ 466 0000 80B4     		push	{r7}
+ 467 0002 85B0     		sub	sp, sp, #20
+ 468 0004 00AF     		add	r7, sp, #0
+ 469 0006 7860     		str	r0, [r7, #4]
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 9
+
+
+ 470 0008 0B46     		mov	r3, r1
+ 471 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 472 000c 0023     		movs	r3, #0
+ 473 000e FB73     		strb	r3, [r7, #15]
+ 474 0010 7B68     		ldr	r3, [r7, #4]
+ 475 0012 DA68     		ldr	r2, [r3, #12]
+ 476 0014 7B88     		ldrh	r3, [r7, #2]
+ 477 0016 1340     		ands	r3, r3, r2
+ 478 0018 002B     		cmp	r3, #0
+ 479 001a 02D0     		beq	.L34
+ 480 001c 0123     		movs	r3, #1
+ 481 001e FB73     		strb	r3, [r7, #15]
+ 482 0020 01E0     		b	.L35
+ 483              	.L34:
+ 484 0022 0023     		movs	r3, #0
+ 485 0024 FB73     		strb	r3, [r7, #15]
+ 486              	.L35:
+ 487 0026 FB7B     		ldrb	r3, [r7, #15]	@ zero_extendqisi2
+ 488 0028 1846     		mov	r0, r3
+ 489 002a 1437     		adds	r7, r7, #20
+ 490 002c BD46     		mov	sp, r7
+ 491              		@ sp needed
+ 492 002e 80BC     		pop	{r7}
+ 493 0030 7047     		bx	lr
+ 495              		.section	.text.GPIO_ReadOutputData,"ax",%progbits
+ 496              		.align	1
+ 497              		.global	GPIO_ReadOutputData
+ 498              		.syntax unified
+ 499              		.thumb
+ 500              		.thumb_func
+ 501              		.fpu softvfp
+ 503              	GPIO_ReadOutputData:
+ 504              		@ args = 0, pretend = 0, frame = 8
+ 505              		@ frame_needed = 1, uses_anonymous_args = 0
+ 506              		@ link register save eliminated.
+ 507 0000 80B4     		push	{r7}
+ 508 0002 83B0     		sub	sp, sp, #12
+ 509 0004 00AF     		add	r7, sp, #0
+ 510 0006 7860     		str	r0, [r7, #4]
+ 511 0008 7B68     		ldr	r3, [r7, #4]
+ 512 000a DB68     		ldr	r3, [r3, #12]
+ 513 000c 9BB2     		uxth	r3, r3
+ 514 000e 1846     		mov	r0, r3
+ 515 0010 0C37     		adds	r7, r7, #12
+ 516 0012 BD46     		mov	sp, r7
+ 517              		@ sp needed
+ 518 0014 80BC     		pop	{r7}
+ 519 0016 7047     		bx	lr
+ 521              		.section	.text.GPIO_SetBits,"ax",%progbits
+ 522              		.align	1
+ 523              		.global	GPIO_SetBits
+ 524              		.syntax unified
+ 525              		.thumb
+ 526              		.thumb_func
+ 527              		.fpu softvfp
+ 529              	GPIO_SetBits:
+ 530              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 10
+
+
+ 531              		@ frame_needed = 1, uses_anonymous_args = 0
+ 532              		@ link register save eliminated.
+ 533 0000 80B4     		push	{r7}
+ 534 0002 83B0     		sub	sp, sp, #12
+ 535 0004 00AF     		add	r7, sp, #0
+ 536 0006 7860     		str	r0, [r7, #4]
+ 537 0008 0B46     		mov	r3, r1
+ 538 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 539 000c 7A88     		ldrh	r2, [r7, #2]
+ 540 000e 7B68     		ldr	r3, [r7, #4]
+ 541 0010 1A61     		str	r2, [r3, #16]
+ 542 0012 00BF     		nop
+ 543 0014 0C37     		adds	r7, r7, #12
+ 544 0016 BD46     		mov	sp, r7
+ 545              		@ sp needed
+ 546 0018 80BC     		pop	{r7}
+ 547 001a 7047     		bx	lr
+ 549              		.section	.text.GPIO_ResetBits,"ax",%progbits
+ 550              		.align	1
+ 551              		.global	GPIO_ResetBits
+ 552              		.syntax unified
+ 553              		.thumb
+ 554              		.thumb_func
+ 555              		.fpu softvfp
+ 557              	GPIO_ResetBits:
+ 558              		@ args = 0, pretend = 0, frame = 8
+ 559              		@ frame_needed = 1, uses_anonymous_args = 0
+ 560              		@ link register save eliminated.
+ 561 0000 80B4     		push	{r7}
+ 562 0002 83B0     		sub	sp, sp, #12
+ 563 0004 00AF     		add	r7, sp, #0
+ 564 0006 7860     		str	r0, [r7, #4]
+ 565 0008 0B46     		mov	r3, r1
+ 566 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 567 000c 7A88     		ldrh	r2, [r7, #2]
+ 568 000e 7B68     		ldr	r3, [r7, #4]
+ 569 0010 5A61     		str	r2, [r3, #20]
+ 570 0012 00BF     		nop
+ 571 0014 0C37     		adds	r7, r7, #12
+ 572 0016 BD46     		mov	sp, r7
+ 573              		@ sp needed
+ 574 0018 80BC     		pop	{r7}
+ 575 001a 7047     		bx	lr
+ 577              		.section	.text.GPIO_TogglePin,"ax",%progbits
+ 578              		.align	1
+ 579              		.global	GPIO_TogglePin
+ 580              		.syntax unified
+ 581              		.thumb
+ 582              		.thumb_func
+ 583              		.fpu softvfp
+ 585              	GPIO_TogglePin:
+ 586              		@ args = 0, pretend = 0, frame = 8
+ 587              		@ frame_needed = 1, uses_anonymous_args = 0
+ 588              		@ link register save eliminated.
+ 589 0000 80B4     		push	{r7}
+ 590 0002 83B0     		sub	sp, sp, #12
+ 591 0004 00AF     		add	r7, sp, #0
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 11
+
+
+ 592 0006 7860     		str	r0, [r7, #4]
+ 593 0008 0B46     		mov	r3, r1
+ 594 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 595 000c 7B68     		ldr	r3, [r7, #4]
+ 596 000e DA68     		ldr	r2, [r3, #12]
+ 597 0010 7B88     		ldrh	r3, [r7, #2]
+ 598 0012 5A40     		eors	r2, r2, r3
+ 599 0014 7B68     		ldr	r3, [r7, #4]
+ 600 0016 DA60     		str	r2, [r3, #12]
+ 601 0018 00BF     		nop
+ 602 001a 0C37     		adds	r7, r7, #12
+ 603 001c BD46     		mov	sp, r7
+ 604              		@ sp needed
+ 605 001e 80BC     		pop	{r7}
+ 606 0020 7047     		bx	lr
+ 608              		.section	.text.GPIO_WriteBit,"ax",%progbits
+ 609              		.align	1
+ 610              		.global	GPIO_WriteBit
+ 611              		.syntax unified
+ 612              		.thumb
+ 613              		.thumb_func
+ 614              		.fpu softvfp
+ 616              	GPIO_WriteBit:
+ 617              		@ args = 0, pretend = 0, frame = 8
+ 618              		@ frame_needed = 1, uses_anonymous_args = 0
+ 619              		@ link register save eliminated.
+ 620 0000 80B4     		push	{r7}
+ 621 0002 83B0     		sub	sp, sp, #12
+ 622 0004 00AF     		add	r7, sp, #0
+ 623 0006 7860     		str	r0, [r7, #4]
+ 624 0008 0B46     		mov	r3, r1
+ 625 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 626 000c 1346     		mov	r3, r2
+ 627 000e 7B70     		strb	r3, [r7, #1]
+ 628 0010 7B78     		ldrb	r3, [r7, #1]	@ zero_extendqisi2
+ 629 0012 002B     		cmp	r3, #0
+ 630 0014 03D0     		beq	.L43
+ 631 0016 7A88     		ldrh	r2, [r7, #2]
+ 632 0018 7B68     		ldr	r3, [r7, #4]
+ 633 001a 1A61     		str	r2, [r3, #16]
+ 634 001c 02E0     		b	.L45
+ 635              	.L43:
+ 636 001e 7A88     		ldrh	r2, [r7, #2]
+ 637 0020 7B68     		ldr	r3, [r7, #4]
+ 638 0022 5A61     		str	r2, [r3, #20]
+ 639              	.L45:
+ 640 0024 00BF     		nop
+ 641 0026 0C37     		adds	r7, r7, #12
+ 642 0028 BD46     		mov	sp, r7
+ 643              		@ sp needed
+ 644 002a 80BC     		pop	{r7}
+ 645 002c 7047     		bx	lr
+ 647              		.section	.text.GPIO_Write,"ax",%progbits
+ 648              		.align	1
+ 649              		.global	GPIO_Write
+ 650              		.syntax unified
+ 651              		.thumb
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 12
+
+
+ 652              		.thumb_func
+ 653              		.fpu softvfp
+ 655              	GPIO_Write:
+ 656              		@ args = 0, pretend = 0, frame = 8
+ 657              		@ frame_needed = 1, uses_anonymous_args = 0
+ 658              		@ link register save eliminated.
+ 659 0000 80B4     		push	{r7}
+ 660 0002 83B0     		sub	sp, sp, #12
+ 661 0004 00AF     		add	r7, sp, #0
+ 662 0006 7860     		str	r0, [r7, #4]
+ 663 0008 0B46     		mov	r3, r1
+ 664 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 665 000c 7A88     		ldrh	r2, [r7, #2]
+ 666 000e 7B68     		ldr	r3, [r7, #4]
+ 667 0010 DA60     		str	r2, [r3, #12]
+ 668 0012 00BF     		nop
+ 669 0014 0C37     		adds	r7, r7, #12
+ 670 0016 BD46     		mov	sp, r7
+ 671              		@ sp needed
+ 672 0018 80BC     		pop	{r7}
+ 673 001a 7047     		bx	lr
+ 675              		.section	.text.GPIO_PinLockConfig,"ax",%progbits
+ 676              		.align	1
+ 677              		.global	GPIO_PinLockConfig
+ 678              		.syntax unified
+ 679              		.thumb
+ 680              		.thumb_func
+ 681              		.fpu softvfp
+ 683              	GPIO_PinLockConfig:
+ 684              		@ args = 0, pretend = 0, frame = 16
+ 685              		@ frame_needed = 1, uses_anonymous_args = 0
+ 686              		@ link register save eliminated.
+ 687 0000 80B4     		push	{r7}
+ 688 0002 85B0     		sub	sp, sp, #20
+ 689 0004 00AF     		add	r7, sp, #0
+ 690 0006 7860     		str	r0, [r7, #4]
+ 691 0008 0B46     		mov	r3, r1
+ 692 000a 7B80     		strh	r3, [r7, #2]	@ movhi
+ 693 000c 4FF48033 		mov	r3, #65536
+ 694 0010 FB60     		str	r3, [r7, #12]
+ 695 0012 7B88     		ldrh	r3, [r7, #2]
+ 696 0014 FA68     		ldr	r2, [r7, #12]
+ 697 0016 1343     		orrs	r3, r3, r2
+ 698 0018 FB60     		str	r3, [r7, #12]
+ 699 001a 7B68     		ldr	r3, [r7, #4]
+ 700 001c FA68     		ldr	r2, [r7, #12]
+ 701 001e 9A61     		str	r2, [r3, #24]
+ 702 0020 7A88     		ldrh	r2, [r7, #2]
+ 703 0022 7B68     		ldr	r3, [r7, #4]
+ 704 0024 9A61     		str	r2, [r3, #24]
+ 705 0026 7B68     		ldr	r3, [r7, #4]
+ 706 0028 FA68     		ldr	r2, [r7, #12]
+ 707 002a 9A61     		str	r2, [r3, #24]
+ 708 002c 7B68     		ldr	r3, [r7, #4]
+ 709 002e 9B69     		ldr	r3, [r3, #24]
+ 710 0030 FB60     		str	r3, [r7, #12]
+ 711 0032 7B68     		ldr	r3, [r7, #4]
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 13
+
+
+ 712 0034 9B69     		ldr	r3, [r3, #24]
+ 713 0036 FB60     		str	r3, [r7, #12]
+ 714 0038 00BF     		nop
+ 715 003a 1437     		adds	r7, r7, #20
+ 716 003c BD46     		mov	sp, r7
+ 717              		@ sp needed
+ 718 003e 80BC     		pop	{r7}
+ 719 0040 7047     		bx	lr
+ 721              		.section	.text.GPIO_EventOutputConfig,"ax",%progbits
+ 722              		.align	1
+ 723              		.global	GPIO_EventOutputConfig
+ 724              		.syntax unified
+ 725              		.thumb
+ 726              		.thumb_func
+ 727              		.fpu softvfp
+ 729              	GPIO_EventOutputConfig:
+ 730              		@ args = 0, pretend = 0, frame = 16
+ 731              		@ frame_needed = 1, uses_anonymous_args = 0
+ 732              		@ link register save eliminated.
+ 733 0000 80B4     		push	{r7}
+ 734 0002 85B0     		sub	sp, sp, #20
+ 735 0004 00AF     		add	r7, sp, #0
+ 736 0006 0346     		mov	r3, r0
+ 737 0008 0A46     		mov	r2, r1
+ 738 000a FB71     		strb	r3, [r7, #7]
+ 739 000c 1346     		mov	r3, r2
+ 740 000e BB71     		strb	r3, [r7, #6]
+ 741 0010 0023     		movs	r3, #0
+ 742 0012 FB60     		str	r3, [r7, #12]
+ 743 0014 0C4B     		ldr	r3, .L49
+ 744 0016 1B68     		ldr	r3, [r3]
+ 745 0018 FB60     		str	r3, [r7, #12]
+ 746 001a FA68     		ldr	r2, [r7, #12]
+ 747 001c 4FF68073 		movw	r3, #65408
+ 748 0020 1340     		ands	r3, r3, r2
+ 749 0022 FB60     		str	r3, [r7, #12]
+ 750 0024 FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 751 0026 1B01     		lsls	r3, r3, #4
+ 752 0028 FA68     		ldr	r2, [r7, #12]
+ 753 002a 1343     		orrs	r3, r3, r2
+ 754 002c FB60     		str	r3, [r7, #12]
+ 755 002e BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 756 0030 FA68     		ldr	r2, [r7, #12]
+ 757 0032 1343     		orrs	r3, r3, r2
+ 758 0034 FB60     		str	r3, [r7, #12]
+ 759 0036 044A     		ldr	r2, .L49
+ 760 0038 FB68     		ldr	r3, [r7, #12]
+ 761 003a 1360     		str	r3, [r2]
+ 762 003c 00BF     		nop
+ 763 003e 1437     		adds	r7, r7, #20
+ 764 0040 BD46     		mov	sp, r7
+ 765              		@ sp needed
+ 766 0042 80BC     		pop	{r7}
+ 767 0044 7047     		bx	lr
+ 768              	.L50:
+ 769 0046 00BF     		.align	2
+ 770              	.L49:
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 14
+
+
+ 771 0048 00000140 		.word	1073807360
+ 773              		.section	.text.GPIO_EventOutputCmd,"ax",%progbits
+ 774              		.align	1
+ 775              		.global	GPIO_EventOutputCmd
+ 776              		.syntax unified
+ 777              		.thumb
+ 778              		.thumb_func
+ 779              		.fpu softvfp
+ 781              	GPIO_EventOutputCmd:
+ 782              		@ args = 0, pretend = 0, frame = 8
+ 783              		@ frame_needed = 1, uses_anonymous_args = 0
+ 784              		@ link register save eliminated.
+ 785 0000 80B4     		push	{r7}
+ 786 0002 83B0     		sub	sp, sp, #12
+ 787 0004 00AF     		add	r7, sp, #0
+ 788 0006 0346     		mov	r3, r0
+ 789 0008 FB71     		strb	r3, [r7, #7]
+ 790 000a 044A     		ldr	r2, .L52
+ 791 000c FB79     		ldrb	r3, [r7, #7]	@ zero_extendqisi2
+ 792 000e 1360     		str	r3, [r2]
+ 793 0010 00BF     		nop
+ 794 0012 0C37     		adds	r7, r7, #12
+ 795 0014 BD46     		mov	sp, r7
+ 796              		@ sp needed
+ 797 0016 80BC     		pop	{r7}
+ 798 0018 7047     		bx	lr
+ 799              	.L53:
+ 800 001a 00BF     		.align	2
+ 801              	.L52:
+ 802 001c 1C002042 		.word	1109393436
+ 804              		.section	.text.GPIO_PinRemapConfig,"ax",%progbits
+ 805              		.align	1
+ 806              		.global	GPIO_PinRemapConfig
+ 807              		.syntax unified
+ 808              		.thumb
+ 809              		.thumb_func
+ 810              		.fpu softvfp
+ 812              	GPIO_PinRemapConfig:
+ 813              		@ args = 0, pretend = 0, frame = 24
+ 814              		@ frame_needed = 1, uses_anonymous_args = 0
+ 815              		@ link register save eliminated.
+ 816 0000 80B4     		push	{r7}
+ 817 0002 87B0     		sub	sp, sp, #28
+ 818 0004 00AF     		add	r7, sp, #0
+ 819 0006 7860     		str	r0, [r7, #4]
+ 820 0008 0B46     		mov	r3, r1
+ 821 000a FB70     		strb	r3, [r7, #3]
+ 822 000c 0023     		movs	r3, #0
+ 823 000e 3B61     		str	r3, [r7, #16]
+ 824 0010 0023     		movs	r3, #0
+ 825 0012 FB60     		str	r3, [r7, #12]
+ 826 0014 0023     		movs	r3, #0
+ 827 0016 7B61     		str	r3, [r7, #20]
+ 828 0018 0023     		movs	r3, #0
+ 829 001a BB60     		str	r3, [r7, #8]
+ 830 001c 7B68     		ldr	r3, [r7, #4]
+ 831 001e 002B     		cmp	r3, #0
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 15
+
+
+ 832 0020 03DA     		bge	.L55
+ 833 0022 2E4B     		ldr	r3, .L64
+ 834 0024 DB69     		ldr	r3, [r3, #28]
+ 835 0026 7B61     		str	r3, [r7, #20]
+ 836 0028 02E0     		b	.L56
+ 837              	.L55:
+ 838 002a 2C4B     		ldr	r3, .L64
+ 839 002c 5B68     		ldr	r3, [r3, #4]
+ 840 002e 7B61     		str	r3, [r7, #20]
+ 841              	.L56:
+ 842 0030 7B68     		ldr	r3, [r7, #4]
+ 843 0032 1B0C     		lsrs	r3, r3, #16
+ 844 0034 03F00F03 		and	r3, r3, #15
+ 845 0038 BB60     		str	r3, [r7, #8]
+ 846 003a 7B68     		ldr	r3, [r7, #4]
+ 847 003c 9BB2     		uxth	r3, r3
+ 848 003e 3B61     		str	r3, [r7, #16]
+ 849 0040 7B68     		ldr	r3, [r7, #4]
+ 850 0042 03F44013 		and	r3, r3, #3145728
+ 851 0046 B3F5401F 		cmp	r3, #3145728
+ 852 004a 0AD1     		bne	.L57
+ 853 004c 7B69     		ldr	r3, [r7, #20]
+ 854 004e 23F07063 		bic	r3, r3, #251658240
+ 855 0052 7B61     		str	r3, [r7, #20]
+ 856 0054 214B     		ldr	r3, .L64
+ 857 0056 5B68     		ldr	r3, [r3, #4]
+ 858 0058 204A     		ldr	r2, .L64
+ 859 005a 23F07063 		bic	r3, r3, #251658240
+ 860 005e 5360     		str	r3, [r2, #4]
+ 861 0060 21E0     		b	.L58
+ 862              	.L57:
+ 863 0062 7B68     		ldr	r3, [r7, #4]
+ 864 0064 03F48013 		and	r3, r3, #1048576
+ 865 0068 002B     		cmp	r3, #0
+ 866 006a 0ED0     		beq	.L59
+ 867 006c 0322     		movs	r2, #3
+ 868 006e BB68     		ldr	r3, [r7, #8]
+ 869 0070 02FA03F3 		lsl	r3, r2, r3
+ 870 0074 FB60     		str	r3, [r7, #12]
+ 871 0076 FB68     		ldr	r3, [r7, #12]
+ 872 0078 DB43     		mvns	r3, r3
+ 873 007a 7A69     		ldr	r2, [r7, #20]
+ 874 007c 1340     		ands	r3, r3, r2
+ 875 007e 7B61     		str	r3, [r7, #20]
+ 876 0080 7B69     		ldr	r3, [r7, #20]
+ 877 0082 43F07063 		orr	r3, r3, #251658240
+ 878 0086 7B61     		str	r3, [r7, #20]
+ 879 0088 0DE0     		b	.L58
+ 880              	.L59:
+ 881 008a 7B68     		ldr	r3, [r7, #4]
+ 882 008c 5B0D     		lsrs	r3, r3, #21
+ 883 008e 1B01     		lsls	r3, r3, #4
+ 884 0090 3A69     		ldr	r2, [r7, #16]
+ 885 0092 02FA03F3 		lsl	r3, r2, r3
+ 886 0096 DB43     		mvns	r3, r3
+ 887 0098 7A69     		ldr	r2, [r7, #20]
+ 888 009a 1340     		ands	r3, r3, r2
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 16
+
+
+ 889 009c 7B61     		str	r3, [r7, #20]
+ 890 009e 7B69     		ldr	r3, [r7, #20]
+ 891 00a0 43F07063 		orr	r3, r3, #251658240
+ 892 00a4 7B61     		str	r3, [r7, #20]
+ 893              	.L58:
+ 894 00a6 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
+ 895 00a8 002B     		cmp	r3, #0
+ 896 00aa 08D0     		beq	.L60
+ 897 00ac 7B68     		ldr	r3, [r7, #4]
+ 898 00ae 5B0D     		lsrs	r3, r3, #21
+ 899 00b0 1B01     		lsls	r3, r3, #4
+ 900 00b2 3A69     		ldr	r2, [r7, #16]
+ 901 00b4 02FA03F3 		lsl	r3, r2, r3
+ 902 00b8 7A69     		ldr	r2, [r7, #20]
+ 903 00ba 1343     		orrs	r3, r3, r2
+ 904 00bc 7B61     		str	r3, [r7, #20]
+ 905              	.L60:
+ 906 00be 7B68     		ldr	r3, [r7, #4]
+ 907 00c0 002B     		cmp	r3, #0
+ 908 00c2 03DA     		bge	.L61
+ 909 00c4 054A     		ldr	r2, .L64
+ 910 00c6 7B69     		ldr	r3, [r7, #20]
+ 911 00c8 D361     		str	r3, [r2, #28]
+ 912 00ca 02E0     		b	.L63
+ 913              	.L61:
+ 914 00cc 034A     		ldr	r2, .L64
+ 915 00ce 7B69     		ldr	r3, [r7, #20]
+ 916 00d0 5360     		str	r3, [r2, #4]
+ 917              	.L63:
+ 918 00d2 00BF     		nop
+ 919 00d4 1C37     		adds	r7, r7, #28
+ 920 00d6 BD46     		mov	sp, r7
+ 921              		@ sp needed
+ 922 00d8 80BC     		pop	{r7}
+ 923 00da 7047     		bx	lr
+ 924              	.L65:
+ 925              		.align	2
+ 926              	.L64:
+ 927 00dc 00000140 		.word	1073807360
+ 929              		.section	.text.GPIO_EXTILineConfig,"ax",%progbits
+ 930              		.align	1
+ 931              		.global	GPIO_EXTILineConfig
+ 932              		.syntax unified
+ 933              		.thumb
+ 934              		.thumb_func
+ 935              		.fpu softvfp
+ 937              	GPIO_EXTILineConfig:
+ 938              		@ args = 0, pretend = 0, frame = 16
+ 939              		@ frame_needed = 1, uses_anonymous_args = 0
+ 940              		@ link register save eliminated.
+ 941 0000 80B4     		push	{r7}
+ 942 0002 85B0     		sub	sp, sp, #20
+ 943 0004 00AF     		add	r7, sp, #0
+ 944 0006 0346     		mov	r3, r0
+ 945 0008 0A46     		mov	r2, r1
+ 946 000a FB71     		strb	r3, [r7, #7]
+ 947 000c 1346     		mov	r3, r2
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 17
+
+
+ 948 000e BB71     		strb	r3, [r7, #6]
+ 949 0010 0023     		movs	r3, #0
+ 950 0012 FB60     		str	r3, [r7, #12]
+ 951 0014 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 952 0016 03F00303 		and	r3, r3, #3
+ 953 001a 9B00     		lsls	r3, r3, #2
+ 954 001c 0F22     		movs	r2, #15
+ 955 001e 02FA03F3 		lsl	r3, r2, r3
+ 956 0022 FB60     		str	r3, [r7, #12]
+ 957 0024 154A     		ldr	r2, .L67
+ 958 0026 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 959 0028 9B08     		lsrs	r3, r3, #2
+ 960 002a DBB2     		uxtb	r3, r3
+ 961 002c 0233     		adds	r3, r3, #2
+ 962 002e 52F82320 		ldr	r2, [r2, r3, lsl #2]
+ 963 0032 FB68     		ldr	r3, [r7, #12]
+ 964 0034 DB43     		mvns	r3, r3
+ 965 0036 1148     		ldr	r0, .L67
+ 966 0038 B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ 967 003a 8908     		lsrs	r1, r1, #2
+ 968 003c C9B2     		uxtb	r1, r1
+ 969 003e 1A40     		ands	r2, r2, r3
+ 970 0040 8B1C     		adds	r3, r1, #2
+ 971 0042 40F82320 		str	r2, [r0, r3, lsl #2]
+ 972 0046 0D4A     		ldr	r2, .L67
+ 973 0048 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 974 004a 9B08     		lsrs	r3, r3, #2
+ 975 004c DBB2     		uxtb	r3, r3
+ 976 004e 0233     		adds	r3, r3, #2
+ 977 0050 52F82320 		ldr	r2, [r2, r3, lsl #2]
+ 978 0054 F979     		ldrb	r1, [r7, #7]	@ zero_extendqisi2
+ 979 0056 BB79     		ldrb	r3, [r7, #6]	@ zero_extendqisi2
+ 980 0058 03F00303 		and	r3, r3, #3
+ 981 005c 9B00     		lsls	r3, r3, #2
+ 982 005e 01FA03F3 		lsl	r3, r1, r3
+ 983 0062 0648     		ldr	r0, .L67
+ 984 0064 B979     		ldrb	r1, [r7, #6]	@ zero_extendqisi2
+ 985 0066 8908     		lsrs	r1, r1, #2
+ 986 0068 C9B2     		uxtb	r1, r1
+ 987 006a 1A43     		orrs	r2, r2, r3
+ 988 006c 8B1C     		adds	r3, r1, #2
+ 989 006e 40F82320 		str	r2, [r0, r3, lsl #2]
+ 990 0072 00BF     		nop
+ 991 0074 1437     		adds	r7, r7, #20
+ 992 0076 BD46     		mov	sp, r7
+ 993              		@ sp needed
+ 994 0078 80BC     		pop	{r7}
+ 995 007a 7047     		bx	lr
+ 996              	.L68:
+ 997              		.align	2
+ 998              	.L67:
+ 999 007c 00000140 		.word	1073807360
+ 1001              		.section	.text.GPIO_ETH_MediaInterfaceConfig,"ax",%progbits
+ 1002              		.align	1
+ 1003              		.global	GPIO_ETH_MediaInterfaceConfig
+ 1004              		.syntax unified
+ 1005              		.thumb
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 18
+
+
+ 1006              		.thumb_func
+ 1007              		.fpu softvfp
+ 1009              	GPIO_ETH_MediaInterfaceConfig:
+ 1010              		@ args = 0, pretend = 0, frame = 8
+ 1011              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1012              		@ link register save eliminated.
+ 1013 0000 80B4     		push	{r7}
+ 1014 0002 83B0     		sub	sp, sp, #12
+ 1015 0004 00AF     		add	r7, sp, #0
+ 1016 0006 7860     		str	r0, [r7, #4]
+ 1017 0008 034A     		ldr	r2, .L70
+ 1018 000a 7B68     		ldr	r3, [r7, #4]
+ 1019 000c 1360     		str	r3, [r2]
+ 1020 000e 00BF     		nop
+ 1021 0010 0C37     		adds	r7, r7, #12
+ 1022 0012 BD46     		mov	sp, r7
+ 1023              		@ sp needed
+ 1024 0014 80BC     		pop	{r7}
+ 1025 0016 7047     		bx	lr
+ 1026              	.L71:
+ 1027              		.align	2
+ 1028              	.L70:
+ 1029 0018 DC002042 		.word	1109393628
+ 1031              		.ident	"GCC: (GNU) 10.1.0"
+ARM GAS  C:\msys64\tmp\ccBgcoLe.s 			page 19
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 stm32f10x_gpio.c
+C:\msys64\tmp\ccBgcoLe.s:14     .text.GPIO_DeInit:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:22     .text.GPIO_DeInit:0000000000000000 GPIO_DeInit
+C:\msys64\tmp\ccBgcoLe.s:120    .text.GPIO_DeInit:00000000000000c8 $d
+C:\msys64\tmp\ccBgcoLe.s:129    .text.GPIO_AFIODeInit:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:136    .text.GPIO_AFIODeInit:0000000000000000 GPIO_AFIODeInit
+C:\msys64\tmp\ccBgcoLe.s:151    .text.GPIO_Init:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:158    .text.GPIO_Init:0000000000000000 GPIO_Init
+C:\msys64\tmp\ccBgcoLe.s:356    .text.GPIO_StructInit:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:363    .text.GPIO_StructInit:0000000000000000 GPIO_StructInit
+C:\msys64\tmp\ccBgcoLe.s:388    .text.GPIO_ReadInputDataBit:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:395    .text.GPIO_ReadInputDataBit:0000000000000000 GPIO_ReadInputDataBit
+C:\msys64\tmp\ccBgcoLe.s:429    .text.GPIO_ReadInputData:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:436    .text.GPIO_ReadInputData:0000000000000000 GPIO_ReadInputData
+C:\msys64\tmp\ccBgcoLe.s:455    .text.GPIO_ReadOutputDataBit:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:462    .text.GPIO_ReadOutputDataBit:0000000000000000 GPIO_ReadOutputDataBit
+C:\msys64\tmp\ccBgcoLe.s:496    .text.GPIO_ReadOutputData:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:503    .text.GPIO_ReadOutputData:0000000000000000 GPIO_ReadOutputData
+C:\msys64\tmp\ccBgcoLe.s:522    .text.GPIO_SetBits:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:529    .text.GPIO_SetBits:0000000000000000 GPIO_SetBits
+C:\msys64\tmp\ccBgcoLe.s:550    .text.GPIO_ResetBits:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:557    .text.GPIO_ResetBits:0000000000000000 GPIO_ResetBits
+C:\msys64\tmp\ccBgcoLe.s:578    .text.GPIO_TogglePin:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:585    .text.GPIO_TogglePin:0000000000000000 GPIO_TogglePin
+C:\msys64\tmp\ccBgcoLe.s:609    .text.GPIO_WriteBit:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:616    .text.GPIO_WriteBit:0000000000000000 GPIO_WriteBit
+C:\msys64\tmp\ccBgcoLe.s:648    .text.GPIO_Write:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:655    .text.GPIO_Write:0000000000000000 GPIO_Write
+C:\msys64\tmp\ccBgcoLe.s:676    .text.GPIO_PinLockConfig:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:683    .text.GPIO_PinLockConfig:0000000000000000 GPIO_PinLockConfig
+C:\msys64\tmp\ccBgcoLe.s:722    .text.GPIO_EventOutputConfig:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:729    .text.GPIO_EventOutputConfig:0000000000000000 GPIO_EventOutputConfig
+C:\msys64\tmp\ccBgcoLe.s:771    .text.GPIO_EventOutputConfig:0000000000000048 $d
+C:\msys64\tmp\ccBgcoLe.s:774    .text.GPIO_EventOutputCmd:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:781    .text.GPIO_EventOutputCmd:0000000000000000 GPIO_EventOutputCmd
+C:\msys64\tmp\ccBgcoLe.s:802    .text.GPIO_EventOutputCmd:000000000000001c $d
+C:\msys64\tmp\ccBgcoLe.s:805    .text.GPIO_PinRemapConfig:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:812    .text.GPIO_PinRemapConfig:0000000000000000 GPIO_PinRemapConfig
+C:\msys64\tmp\ccBgcoLe.s:927    .text.GPIO_PinRemapConfig:00000000000000dc $d
+C:\msys64\tmp\ccBgcoLe.s:930    .text.GPIO_EXTILineConfig:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:937    .text.GPIO_EXTILineConfig:0000000000000000 GPIO_EXTILineConfig
+C:\msys64\tmp\ccBgcoLe.s:999    .text.GPIO_EXTILineConfig:000000000000007c $d
+C:\msys64\tmp\ccBgcoLe.s:1002   .text.GPIO_ETH_MediaInterfaceConfig:0000000000000000 $t
+C:\msys64\tmp\ccBgcoLe.s:1009   .text.GPIO_ETH_MediaInterfaceConfig:0000000000000000 GPIO_ETH_MediaInterfaceConfig
+C:\msys64\tmp\ccBgcoLe.s:1029   .text.GPIO_ETH_MediaInterfaceConfig:0000000000000018 $d
+
+UNDEFINED SYMBOLS
+RCC_APB2PeriphResetCmd

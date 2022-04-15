@@ -1,0 +1,392 @@
+ARM GAS  C:\msys64\tmp\ccrodvkt.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 6
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"system_stm32f10x.c"
+  12              		.text
+  13              		.global	SystemCoreClock
+  14              		.section	.data.SystemCoreClock,"aw"
+  15              		.align	2
+  18              	SystemCoreClock:
+  19 0000 00A24A04 		.word	72000000
+  20              		.global	AHBPrescTable
+  21              		.section	.data.AHBPrescTable,"aw"
+  22              		.align	2
+  25              	AHBPrescTable:
+  26 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\001\002\003\004\006"
+  26      00000000 
+  26      01020304 
+  26      06
+  27 000d 070809   		.ascii	"\007\010\011"
+  28              		.section	.text.SystemInit,"ax",%progbits
+  29              		.align	1
+  30              		.global	SystemInit
+  31              		.arch armv7-m
+  32              		.syntax unified
+  33              		.thumb
+  34              		.thumb_func
+  35              		.fpu softvfp
+  37              	SystemInit:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 1, uses_anonymous_args = 0
+  40 0000 80B5     		push	{r7, lr}
+  41 0002 00AF     		add	r7, sp, #0
+  42 0004 154B     		ldr	r3, .L2
+  43 0006 1B68     		ldr	r3, [r3]
+  44 0008 144A     		ldr	r2, .L2
+  45 000a 43F00103 		orr	r3, r3, #1
+  46 000e 1360     		str	r3, [r2]
+  47 0010 124B     		ldr	r3, .L2
+  48 0012 5A68     		ldr	r2, [r3, #4]
+  49 0014 1149     		ldr	r1, .L2
+  50 0016 124B     		ldr	r3, .L2+4
+  51 0018 1340     		ands	r3, r3, r2
+  52 001a 4B60     		str	r3, [r1, #4]
+  53 001c 0F4B     		ldr	r3, .L2
+  54 001e 1B68     		ldr	r3, [r3]
+  55 0020 0E4A     		ldr	r2, .L2
+  56 0022 23F08473 		bic	r3, r3, #17301504
+  57 0026 23F48033 		bic	r3, r3, #65536
+  58 002a 1360     		str	r3, [r2]
+  59 002c 0B4B     		ldr	r3, .L2
+ARM GAS  C:\msys64\tmp\ccrodvkt.s 			page 2
+
+
+  60 002e 1B68     		ldr	r3, [r3]
+  61 0030 0A4A     		ldr	r2, .L2
+  62 0032 23F48023 		bic	r3, r3, #262144
+  63 0036 1360     		str	r3, [r2]
+  64 0038 084B     		ldr	r3, .L2
+  65 003a 5B68     		ldr	r3, [r3, #4]
+  66 003c 074A     		ldr	r2, .L2
+  67 003e 23F4FE03 		bic	r3, r3, #8323072
+  68 0042 5360     		str	r3, [r2, #4]
+  69 0044 054B     		ldr	r3, .L2
+  70 0046 4FF41F02 		mov	r2, #10420224
+  71 004a 9A60     		str	r2, [r3, #8]
+  72 004c FFF7FEFF 		bl	SetSysClock
+  73 0050 044B     		ldr	r3, .L2+8
+  74 0052 4FF00062 		mov	r2, #134217728
+  75 0056 9A60     		str	r2, [r3, #8]
+  76 0058 00BF     		nop
+  77 005a 80BD     		pop	{r7, pc}
+  78              	.L3:
+  79              		.align	2
+  80              	.L2:
+  81 005c 00100240 		.word	1073876992
+  82 0060 0000FFF8 		.word	-117506048
+  83 0064 00ED00E0 		.word	-536810240
+  85              		.section	.text.SystemCoreClockUpdate,"ax",%progbits
+  86              		.align	1
+  87              		.global	SystemCoreClockUpdate
+  88              		.syntax unified
+  89              		.thumb
+  90              		.thumb_func
+  91              		.fpu softvfp
+  93              	SystemCoreClockUpdate:
+  94              		@ args = 0, pretend = 0, frame = 16
+  95              		@ frame_needed = 1, uses_anonymous_args = 0
+  96              		@ link register save eliminated.
+  97 0000 80B4     		push	{r7}
+  98 0002 85B0     		sub	sp, sp, #20
+  99 0004 00AF     		add	r7, sp, #0
+ 100 0006 0023     		movs	r3, #0
+ 101 0008 FB60     		str	r3, [r7, #12]
+ 102 000a 0023     		movs	r3, #0
+ 103 000c BB60     		str	r3, [r7, #8]
+ 104 000e 0023     		movs	r3, #0
+ 105 0010 7B60     		str	r3, [r7, #4]
+ 106 0012 2F4B     		ldr	r3, .L13
+ 107 0014 5B68     		ldr	r3, [r3, #4]
+ 108 0016 03F00C03 		and	r3, r3, #12
+ 109 001a FB60     		str	r3, [r7, #12]
+ 110 001c FB68     		ldr	r3, [r7, #12]
+ 111 001e 082B     		cmp	r3, #8
+ 112 0020 11D0     		beq	.L5
+ 113 0022 FB68     		ldr	r3, [r7, #12]
+ 114 0024 082B     		cmp	r3, #8
+ 115 0026 3AD8     		bhi	.L6
+ 116 0028 FB68     		ldr	r3, [r7, #12]
+ 117 002a 002B     		cmp	r3, #0
+ 118 002c 03D0     		beq	.L7
+ARM GAS  C:\msys64\tmp\ccrodvkt.s 			page 3
+
+
+ 119 002e FB68     		ldr	r3, [r7, #12]
+ 120 0030 042B     		cmp	r3, #4
+ 121 0032 04D0     		beq	.L8
+ 122 0034 33E0     		b	.L6
+ 123              	.L7:
+ 124 0036 274B     		ldr	r3, .L13+4
+ 125 0038 274A     		ldr	r2, .L13+8
+ 126 003a 1A60     		str	r2, [r3]
+ 127 003c 33E0     		b	.L9
+ 128              	.L8:
+ 129 003e 254B     		ldr	r3, .L13+4
+ 130 0040 254A     		ldr	r2, .L13+8
+ 131 0042 1A60     		str	r2, [r3]
+ 132 0044 2FE0     		b	.L9
+ 133              	.L5:
+ 134 0046 224B     		ldr	r3, .L13
+ 135 0048 5B68     		ldr	r3, [r3, #4]
+ 136 004a 03F47013 		and	r3, r3, #3932160
+ 137 004e BB60     		str	r3, [r7, #8]
+ 138 0050 1F4B     		ldr	r3, .L13
+ 139 0052 5B68     		ldr	r3, [r3, #4]
+ 140 0054 03F48033 		and	r3, r3, #65536
+ 141 0058 7B60     		str	r3, [r7, #4]
+ 142 005a BB68     		ldr	r3, [r7, #8]
+ 143 005c 9B0C     		lsrs	r3, r3, #18
+ 144 005e 0233     		adds	r3, r3, #2
+ 145 0060 BB60     		str	r3, [r7, #8]
+ 146 0062 7B68     		ldr	r3, [r7, #4]
+ 147 0064 002B     		cmp	r3, #0
+ 148 0066 06D1     		bne	.L10
+ 149 0068 BB68     		ldr	r3, [r7, #8]
+ 150 006a 1C4A     		ldr	r2, .L13+12
+ 151 006c 02FB03F3 		mul	r3, r2, r3
+ 152 0070 184A     		ldr	r2, .L13+4
+ 153 0072 1360     		str	r3, [r2]
+ 154 0074 17E0     		b	.L9
+ 155              	.L10:
+ 156 0076 164B     		ldr	r3, .L13
+ 157 0078 5B68     		ldr	r3, [r3, #4]
+ 158 007a 03F40033 		and	r3, r3, #131072
+ 159 007e 002B     		cmp	r3, #0
+ 160 0080 06D0     		beq	.L12
+ 161 0082 BB68     		ldr	r3, [r7, #8]
+ 162 0084 154A     		ldr	r2, .L13+12
+ 163 0086 02FB03F3 		mul	r3, r2, r3
+ 164 008a 124A     		ldr	r2, .L13+4
+ 165 008c 1360     		str	r3, [r2]
+ 166 008e 0AE0     		b	.L9
+ 167              	.L12:
+ 168 0090 BB68     		ldr	r3, [r7, #8]
+ 169 0092 114A     		ldr	r2, .L13+8
+ 170 0094 02FB03F3 		mul	r3, r2, r3
+ 171 0098 0E4A     		ldr	r2, .L13+4
+ 172 009a 1360     		str	r3, [r2]
+ 173 009c 03E0     		b	.L9
+ 174              	.L6:
+ 175 009e 0D4B     		ldr	r3, .L13+4
+ARM GAS  C:\msys64\tmp\ccrodvkt.s 			page 4
+
+
+ 176 00a0 0D4A     		ldr	r2, .L13+8
+ 177 00a2 1A60     		str	r2, [r3]
+ 178 00a4 00BF     		nop
+ 179              	.L9:
+ 180 00a6 0A4B     		ldr	r3, .L13
+ 181 00a8 5B68     		ldr	r3, [r3, #4]
+ 182 00aa 1B09     		lsrs	r3, r3, #4
+ 183 00ac 03F00F03 		and	r3, r3, #15
+ 184 00b0 0B4A     		ldr	r2, .L13+16
+ 185 00b2 D35C     		ldrb	r3, [r2, r3]
+ 186 00b4 DBB2     		uxtb	r3, r3
+ 187 00b6 FB60     		str	r3, [r7, #12]
+ 188 00b8 064B     		ldr	r3, .L13+4
+ 189 00ba 1A68     		ldr	r2, [r3]
+ 190 00bc FB68     		ldr	r3, [r7, #12]
+ 191 00be 22FA03F3 		lsr	r3, r2, r3
+ 192 00c2 044A     		ldr	r2, .L13+4
+ 193 00c4 1360     		str	r3, [r2]
+ 194 00c6 00BF     		nop
+ 195 00c8 1437     		adds	r7, r7, #20
+ 196 00ca BD46     		mov	sp, r7
+ 197              		@ sp needed
+ 198 00cc 80BC     		pop	{r7}
+ 199 00ce 7047     		bx	lr
+ 200              	.L14:
+ 201              		.align	2
+ 202              	.L13:
+ 203 00d0 00100240 		.word	1073876992
+ 204 00d4 00000000 		.word	SystemCoreClock
+ 205 00d8 00127A00 		.word	8000000
+ 206 00dc 00093D00 		.word	4000000
+ 207 00e0 00000000 		.word	AHBPrescTable
+ 209              		.section	.text.SetSysClock,"ax",%progbits
+ 210              		.align	1
+ 211              		.syntax unified
+ 212              		.thumb
+ 213              		.thumb_func
+ 214              		.fpu softvfp
+ 216              	SetSysClock:
+ 217              		@ args = 0, pretend = 0, frame = 0
+ 218              		@ frame_needed = 1, uses_anonymous_args = 0
+ 219 0000 80B5     		push	{r7, lr}
+ 220 0002 00AF     		add	r7, sp, #0
+ 221 0004 FFF7FEFF 		bl	SetSysClockTo72
+ 222 0008 00BF     		nop
+ 223 000a 80BD     		pop	{r7, pc}
+ 225              		.section	.text.SetSysClockTo72,"ax",%progbits
+ 226              		.align	1
+ 227              		.syntax unified
+ 228              		.thumb
+ 229              		.thumb_func
+ 230              		.fpu softvfp
+ 232              	SetSysClockTo72:
+ 233              		@ args = 0, pretend = 0, frame = 8
+ 234              		@ frame_needed = 1, uses_anonymous_args = 0
+ 235              		@ link register save eliminated.
+ 236 0000 80B4     		push	{r7}
+ARM GAS  C:\msys64\tmp\ccrodvkt.s 			page 5
+
+
+ 237 0002 83B0     		sub	sp, sp, #12
+ 238 0004 00AF     		add	r7, sp, #0
+ 239 0006 0023     		movs	r3, #0
+ 240 0008 7B60     		str	r3, [r7, #4]
+ 241 000a 0023     		movs	r3, #0
+ 242 000c 3B60     		str	r3, [r7]
+ 243 000e 3A4B     		ldr	r3, .L25
+ 244 0010 1B68     		ldr	r3, [r3]
+ 245 0012 394A     		ldr	r2, .L25
+ 246 0014 43F48033 		orr	r3, r3, #65536
+ 247 0018 1360     		str	r3, [r2]
+ 248              	.L18:
+ 249 001a 374B     		ldr	r3, .L25
+ 250 001c 1B68     		ldr	r3, [r3]
+ 251 001e 03F40033 		and	r3, r3, #131072
+ 252 0022 3B60     		str	r3, [r7]
+ 253 0024 7B68     		ldr	r3, [r7, #4]
+ 254 0026 0133     		adds	r3, r3, #1
+ 255 0028 7B60     		str	r3, [r7, #4]
+ 256 002a 3B68     		ldr	r3, [r7]
+ 257 002c 002B     		cmp	r3, #0
+ 258 002e 03D1     		bne	.L17
+ 259 0030 7B68     		ldr	r3, [r7, #4]
+ 260 0032 B3F5A06F 		cmp	r3, #1280
+ 261 0036 F0D1     		bne	.L18
+ 262              	.L17:
+ 263 0038 2F4B     		ldr	r3, .L25
+ 264 003a 1B68     		ldr	r3, [r3]
+ 265 003c 03F40033 		and	r3, r3, #131072
+ 266 0040 002B     		cmp	r3, #0
+ 267 0042 02D0     		beq	.L19
+ 268 0044 0123     		movs	r3, #1
+ 269 0046 3B60     		str	r3, [r7]
+ 270 0048 01E0     		b	.L20
+ 271              	.L19:
+ 272 004a 0023     		movs	r3, #0
+ 273 004c 3B60     		str	r3, [r7]
+ 274              	.L20:
+ 275 004e 3B68     		ldr	r3, [r7]
+ 276 0050 012B     		cmp	r3, #1
+ 277 0052 4BD1     		bne	.L24
+ 278 0054 294B     		ldr	r3, .L25+4
+ 279 0056 1B68     		ldr	r3, [r3]
+ 280 0058 284A     		ldr	r2, .L25+4
+ 281 005a 43F01003 		orr	r3, r3, #16
+ 282 005e 1360     		str	r3, [r2]
+ 283 0060 264B     		ldr	r3, .L25+4
+ 284 0062 1B68     		ldr	r3, [r3]
+ 285 0064 254A     		ldr	r2, .L25+4
+ 286 0066 23F00303 		bic	r3, r3, #3
+ 287 006a 1360     		str	r3, [r2]
+ 288 006c 234B     		ldr	r3, .L25+4
+ 289 006e 1B68     		ldr	r3, [r3]
+ 290 0070 224A     		ldr	r2, .L25+4
+ 291 0072 43F00203 		orr	r3, r3, #2
+ 292 0076 1360     		str	r3, [r2]
+ 293 0078 1F4B     		ldr	r3, .L25
+ARM GAS  C:\msys64\tmp\ccrodvkt.s 			page 6
+
+
+ 294 007a 1F4A     		ldr	r2, .L25
+ 295 007c 5B68     		ldr	r3, [r3, #4]
+ 296 007e 5360     		str	r3, [r2, #4]
+ 297 0080 1D4B     		ldr	r3, .L25
+ 298 0082 1D4A     		ldr	r2, .L25
+ 299 0084 5B68     		ldr	r3, [r3, #4]
+ 300 0086 5360     		str	r3, [r2, #4]
+ 301 0088 1B4B     		ldr	r3, .L25
+ 302 008a 5B68     		ldr	r3, [r3, #4]
+ 303 008c 1A4A     		ldr	r2, .L25
+ 304 008e 43F48063 		orr	r3, r3, #1024
+ 305 0092 5360     		str	r3, [r2, #4]
+ 306 0094 184B     		ldr	r3, .L25
+ 307 0096 5B68     		ldr	r3, [r3, #4]
+ 308 0098 174A     		ldr	r2, .L25
+ 309 009a 23F47C13 		bic	r3, r3, #4128768
+ 310 009e 5360     		str	r3, [r2, #4]
+ 311 00a0 154B     		ldr	r3, .L25
+ 312 00a2 5B68     		ldr	r3, [r3, #4]
+ 313 00a4 144A     		ldr	r2, .L25
+ 314 00a6 43F4E813 		orr	r3, r3, #1900544
+ 315 00aa 5360     		str	r3, [r2, #4]
+ 316 00ac 124B     		ldr	r3, .L25
+ 317 00ae 1B68     		ldr	r3, [r3]
+ 318 00b0 114A     		ldr	r2, .L25
+ 319 00b2 43F08073 		orr	r3, r3, #16777216
+ 320 00b6 1360     		str	r3, [r2]
+ 321 00b8 00BF     		nop
+ 322              	.L22:
+ 323 00ba 0F4B     		ldr	r3, .L25
+ 324 00bc 1B68     		ldr	r3, [r3]
+ 325 00be 03F00073 		and	r3, r3, #33554432
+ 326 00c2 002B     		cmp	r3, #0
+ 327 00c4 F9D0     		beq	.L22
+ 328 00c6 0C4B     		ldr	r3, .L25
+ 329 00c8 5B68     		ldr	r3, [r3, #4]
+ 330 00ca 0B4A     		ldr	r2, .L25
+ 331 00cc 23F00303 		bic	r3, r3, #3
+ 332 00d0 5360     		str	r3, [r2, #4]
+ 333 00d2 094B     		ldr	r3, .L25
+ 334 00d4 5B68     		ldr	r3, [r3, #4]
+ 335 00d6 084A     		ldr	r2, .L25
+ 336 00d8 43F00203 		orr	r3, r3, #2
+ 337 00dc 5360     		str	r3, [r2, #4]
+ 338 00de 00BF     		nop
+ 339              	.L23:
+ 340 00e0 054B     		ldr	r3, .L25
+ 341 00e2 5B68     		ldr	r3, [r3, #4]
+ 342 00e4 03F00C03 		and	r3, r3, #12
+ 343 00e8 082B     		cmp	r3, #8
+ 344 00ea F9D1     		bne	.L23
+ 345              	.L24:
+ 346 00ec 00BF     		nop
+ 347 00ee 0C37     		adds	r7, r7, #12
+ 348 00f0 BD46     		mov	sp, r7
+ 349              		@ sp needed
+ 350 00f2 80BC     		pop	{r7}
+ARM GAS  C:\msys64\tmp\ccrodvkt.s 			page 7
+
+
+ 351 00f4 7047     		bx	lr
+ 352              	.L26:
+ 353 00f6 00BF     		.align	2
+ 354              	.L25:
+ 355 00f8 00100240 		.word	1073876992
+ 356 00fc 00200240 		.word	1073881088
+ 358              		.ident	"GCC: (GNU) 10.1.0"
+ARM GAS  C:\msys64\tmp\ccrodvkt.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 system_stm32f10x.c
+C:\msys64\tmp\ccrodvkt.s:18     .data.SystemCoreClock:0000000000000000 SystemCoreClock
+C:\msys64\tmp\ccrodvkt.s:15     .data.SystemCoreClock:0000000000000000 $d
+C:\msys64\tmp\ccrodvkt.s:25     .data.AHBPrescTable:0000000000000000 AHBPrescTable
+C:\msys64\tmp\ccrodvkt.s:22     .data.AHBPrescTable:0000000000000000 $d
+C:\msys64\tmp\ccrodvkt.s:29     .text.SystemInit:0000000000000000 $t
+C:\msys64\tmp\ccrodvkt.s:37     .text.SystemInit:0000000000000000 SystemInit
+C:\msys64\tmp\ccrodvkt.s:216    .text.SetSysClock:0000000000000000 SetSysClock
+C:\msys64\tmp\ccrodvkt.s:81     .text.SystemInit:000000000000005c $d
+C:\msys64\tmp\ccrodvkt.s:86     .text.SystemCoreClockUpdate:0000000000000000 $t
+C:\msys64\tmp\ccrodvkt.s:93     .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
+C:\msys64\tmp\ccrodvkt.s:203    .text.SystemCoreClockUpdate:00000000000000d0 $d
+C:\msys64\tmp\ccrodvkt.s:210    .text.SetSysClock:0000000000000000 $t
+C:\msys64\tmp\ccrodvkt.s:232    .text.SetSysClockTo72:0000000000000000 SetSysClockTo72
+C:\msys64\tmp\ccrodvkt.s:226    .text.SetSysClockTo72:0000000000000000 $t
+C:\msys64\tmp\ccrodvkt.s:355    .text.SetSysClockTo72:00000000000000f8 $d
+
+NO UNDEFINED SYMBOLS
